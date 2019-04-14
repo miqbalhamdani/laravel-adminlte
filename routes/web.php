@@ -12,5 +12,27 @@
 */
 
 Route::get('/', function () {
-    return view('dashboard.pages.index');
+    return view('welcome');
+});
+
+/*
+|--------------------------------------------------------------------------
+| LOGIN
+|--------------------------------------------------------------------------
+*/
+Route::get('login', 'UserController@login');
+Route::post('login', 'UserController@login');
+
+Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function(){
+
+    Route::get('/', function () {
+        return view('dashboard.pages.index');
+    });
+
+    /*
+    |--------------------------------------------------------------------------
+    | LOGOUT
+    |--------------------------------------------------------------------------
+    */
+    Route::get('logout', 'UserController@logout');
 });

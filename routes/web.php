@@ -31,6 +31,19 @@ Route::group(['middleware' => 'admin', 'prefix' => 'admin'], function(){
 
     /*
     |--------------------------------------------------------------------------
+    | POST
+    |--------------------------------------------------------------------------
+    */
+    Route::get('post', 'PostController@index');
+    Route::post('post', 'PostController@index');
+    Route::get('post/create/', 'PostController@create');
+    Route::post('post/create/', 'PostController@create');
+    Route::get('post/update/{id}', 'PostController@update');
+    Route::post('post/update/{id}', 'PostController@update');
+    Route::get('post/delete/{id}', 'PostController@destroy');
+
+    /*
+    |--------------------------------------------------------------------------
     | LOGOUT
     |--------------------------------------------------------------------------
     */

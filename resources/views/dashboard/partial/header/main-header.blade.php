@@ -88,12 +88,12 @@
         </li> --}}
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-            <img src="{{ asset('adminlte/dist/img/user4-128x128.jpg') }}" class="user-image" alt="User Image">
+            <img src="{{ asset('bower_components/admin-lte/dist/img/user4-128x128.jpg') }}" class="user-image" alt="User Image">
             <span class="hidden-xs">Alexander Pierce</span>
           </a>
           <ul class="dropdown-menu">
             <li class="user-header">
-              <img src="{{ asset('adminlte/dist/img/user4-128x128.jpg') }}" class="img-circle" alt="User Image">
+              <img src="{{ asset('bower_components/admin-lte/dist/img/user4-128x128.jpg') }}" class="img-circle" alt="User Image">
 
               <p>
                 Alexander Pierce - Web Developer

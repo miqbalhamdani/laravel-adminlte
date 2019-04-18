@@ -54,11 +54,3 @@
 </div>
 
 @endsection
-
-@push('scripts')
-  <script>
-    $(function () {
-      CKEDITOR.replace('editor1')
-    })
-  </script>
-@endpush

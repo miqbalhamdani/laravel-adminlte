@@ -36,12 +36,17 @@
       <tr>
         <td>{{ $item->title }}</td>
         <td>{!! $item->description !!}</td>
-        <td><img src="\{{ env('PATH_POST') }}\{{ $item->image }}" height="100px"></td>
+        <td>
+          @if($item->image)
+            <img class="image-link" src="\{{ env('PATH_POST') }}\{{ $item->image }}"
+              href="\{{ env('PATH_POST') }}\{{ $item->image }}" width="100">
+          @endif
+        </td>
         <td>
             <a href="{{ URL('/admin/post/update/'. $item->id) }}">
               <button class="btn btn-warning"><i class="fa fa-edit"></i> update </button>
             </a>
-            <a onclick="deleteRow('/admin/post/', {{ $item->id }})">
+            <a onclick="deleteRow('/admin/post', {{ $item->id }})">
               <button class="btn btn-danger"><i class="fa fa-trash"></i> delete </button>
             </a>
         </td>
@@ -54,11 +59,3 @@
 </div>
 
 @endsection
-
-@push('scripts')
-  <script>
-    $(document).ready(function () {
-      $('#example1').DataTable()
-    })
-  </script>
-@endpush
